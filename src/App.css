@@ -129,3 +129,13 @@ a:hover {
     width: 18px;
   }
 }
+
+.inbox_list {
+  border-right: 2px solid transparent;
+}
+
+.inbox_list:hover {
+  background: #F7F8FF !important;
+  cursor: pointer;
+  border-right: 2px solid var(--primary);
+}

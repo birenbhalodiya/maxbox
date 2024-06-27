@@ -1,10 +1,11 @@
 import { Box, Checkbox, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Input, Select } from '../../components/Common'
-import { attachmentLine, bellWhite, deleteWhite, refresh, starFilled, user } from '../../helper/Constant'
+import { attachmentLine, bellWhite, deleteWhite, refresh, starFilled, staroutLine, user } from '../../helper/Constant'
 
 
 const Sidebar = () => {
+    const [startIndex, setStartIndex] = useState([])
     return (
         <Box sx={{ backgroundColor: '#F7F8FF', height: '100%', marginTop: { xs: '58px', sm: '70px' }, overflow: 'hidden' }}>
             <Box p={{ xs: '10px', sm: 2 }}>
@@ -45,7 +46,7 @@ const Sidebar = () => {
             <Stack sx={{ overflowX: 'scroll', maxHeight: { xs: 'calc(100vh - 232px)', sm: 'calc(100vh - 280px)' } }}>
                 {[1, 1, 1, 1, 1, 1, 1, 1].map((ele, i) => {
                     return (
-                        <Stack key={i} sx={{ background: 'var(--white)', borderBottom: '1px solid var(--border)' }} flexDirection={'row'} gap={1} p={{ xs: '10px', sm: 2 }}>
+                        <Stack className='inbox_list' key={i} sx={{ background: 'var(--white)', borderBottom: '1px solid var(--border)' }} flexDirection={'row'} gap={1} p={{ xs: '10px', sm: 2 }}>
                             <Box>
                                 <Checkbox
                                     name='rememberMe'
@@ -64,7 +65,14 @@ const Sidebar = () => {
                                     </Stack>
                                     <Stack alignItems={'flex-end'}>
                                         <Typography color={'text.main'} fontSize={{ xs: '10px' }}>8:56 PM</Typography>
-                                        <img src={starFilled} alt='' />
+                                        {startIndex.includes(i + 1) ?
+                                            <img src={starFilled} alt='' style={{ cursor: 'pointer' }} onClick={() => {
+                                                if (startIndex.includes(i + 1)) {
+                                                    setStartIndex(startIndex.filter((e, index) => e !== (i + 1)))
+                                                }
+                                            }} /> : <img src={staroutLine} alt='' style={{ cursor: 'pointer' }} onClick={() => {
+                                                setStartIndex([...startIndex, i + 1])
+                                            }} />}
                                     </Stack>
                                 </Stack>
                                 <Stack flexDirection={'row'} gap={1} alignItems={'center'}>
