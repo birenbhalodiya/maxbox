@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary: #647AF7;
+  --text: #909092;
+  --black: #000000;
+  --white: #ffffff;
+  --border: rgba(0, 0, 0, 0.12);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+}
+
+a {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+/*--------------------- 
+        Scrollbar css 
+----------------------------------*/
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  display: none;
+  scrollbar-gutter: stable both-edges;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+/*--------------------- 
+        Scrollbar css 
+----------------------------------*/
+
+.input_inbox .MuiInputBase-root {
+  background: var(--white);
+  border-radius: 30px !important;
+}
+
+.input_inbox input {
+  padding: 10px 20px !important;
+}
+
+/*--------------------- 
+        Radix UI css 
+----------------------------------*/
+.dropDown {
+  background: transparent;
+  display: flex;
+  border: unset !important;
+  outline: unset !important;
+}
+
+[data-radix-popper-content-wrapper] {
+  top: 9px !important;
+  font-weight: 400;
+}
+
+.dropDownContent {
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px var(--border);
+  z-index: 1000;
+  padding: 5px;
+}
+
+.dropDownMenu {
+  border: unset !important;
+  outline: unset !important;
+  font-size: 14px !important;
+  cursor: pointer;
+}
+
+
+.dropDownMenu {
+  padding: 7px 10px;
+}
+
+.dropDownMenu:hover {
+  background: var(--primaryLight);
+}
+
+/*--------------------- 
+        Radix UI css 
+----------------------------------*/
+
+.inbox_header_image {
+  width: 22px;
+}
+
+.sidebar_select .MuiSelect-select,
+.header_select .MuiSelect-select {
+  width: 150px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.sidebar_select {
+  width: 150px !important;
+}
+
+.header_select {
+  border-radius: 3px !important;
+}
+
+.MuiMenuItem-root {
+  font-size: 13px !important;
+}
+
+@media (max-width:600px) {
+  .inbox_header_image {
+    width: 18px;
+  }
+}
